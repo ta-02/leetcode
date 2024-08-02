@@ -19,7 +19,7 @@ function isBalanced(root: TreeNode | null): boolean {
     const bf = Math.abs(left - right);
     if (bf !== 0 && bf !== 1) isOk = false;
     return Math.max(left, right) + 1;
-  }
+  };
   dfs(root);
-  return isOk
-};
+  return isOk;
+}

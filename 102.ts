@@ -22,7 +22,7 @@ function levelOrder(root: TreeNode | null): number[][] {
     ans[level].push(node.val);
     helper(node.left, level + 1);
     helper(node.right, level + 1);
-  }
+  };
 
   helper(root, 0);
   return ans;
