@@ -19,4 +19,4 @@ function rightSideView(root: TreeNode | null): number[] {
   };
   helper(root, 0);
   return ans;
-};
+}
