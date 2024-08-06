@@ -4,18 +4,9 @@ function minimumPushes(word: string): number {
     return map;
   }, new Map<string, number>());
 
-  const sortedMap = new Map(
-    [...countMap.entries()].sort((a, b) => b[1] - a[1]),
-  );
+  const sortedValues = [...countMap.values()].sort((a, b) => b - a);
 
-  let ans = 0;
-  let count = 0;
-
-  sortedMap.forEach((v) => {
-    const level = Math.floor(count / 8) + 1;
-    ans += v * level;
-    count++;
-  });
-
-  return ans;
+  return sortedValues.reduce((ans, v, index) => {
+    return ans + v * (Math.floor(index / 8) + 1);
+  }, 0);
 }
