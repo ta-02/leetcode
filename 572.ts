@@ -11,7 +11,7 @@ class TreeNode {
 
 const isSameTree = (
   root: TreeNode | null,
-  subRoot: TreeNode | null
+  subRoot: TreeNode | null,
 ): boolean => {
   if (!root && !subRoot) return true;
   if (!root || !subRoot) return false;
