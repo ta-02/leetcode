@@ -7,7 +7,7 @@ class Solution:
         n = len(candidates)
         candidates.sort()
 
-        def dfs(idx: int, path: List[int], curr: int):
+        def dfs(idx: int, path: List[int], curr: int) -> None:
             if curr > target:
                 return
 
