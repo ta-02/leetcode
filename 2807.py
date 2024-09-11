@@ -1,3 +1,4 @@
+import math
 from typing import Optional
 
 
@@ -16,7 +17,7 @@ class Solution:
 
         while curr:
             if prev:
-                new_node = ListNode(gcd(prev.val, curr.val), curr)
+                new_node = ListNode(math.gcd(prev.val, curr.val), curr)
                 prev.next = new_node
             prev = curr
             curr = curr.next
