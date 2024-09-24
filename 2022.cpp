@@ -7,6 +7,8 @@ public:
   vector<vector<int>> construct2DArray(vector<int> &original, int m, int n) {
     vector<vector<int>> res(m, vector<int>(n));
 
+    vector<vector<int>> res2(m, vector<int>(n));
+
     if (original.size() != m * n) {
       return {};
     }
