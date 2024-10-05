@@ -1,5 +1,5 @@
-#include <map>
 #include <numeric>
+#include <unordered_map>
 #include <vector>
 
 using namespace std;
@@ -18,7 +18,7 @@ public:
 
     int s_pt = total / np;
 
-    map<int, int> f;
+    unordered_map<int, int> f;
     for (int n : skill) {
       f[n]++;
     }
