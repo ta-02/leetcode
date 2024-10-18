@@ -7,25 +7,22 @@ class Node:
         self.neighbors = neighbors if neighbors is not None else []
 
 
-"""
-1 -> 2, 3
-2 -> 3, 4
-3 -> 4
-
-
-"""
-
-
 class Solution:
     def cloneGraph(self, node: Optional["Node"]) -> Optional["Node"]:
-        if not node:
-            return
+        clones = {}
 
-        q = [node]
-        while q:
-            curr = q.pop()
-            new_curr = Node(curr.val)
-            for n in curr.neighbors:
-                new_n = Node(n.val)
+        def dfs(node):
+            if not node:
+                clones[node] = None
+                return
 
-        return None
+            clones[node] = Node(node.val)
+
+            for n in node.neighbors:
+                if n not in clones:
+                    clones[n] = Node(n.val)
+                    dfs(n)
+                clones[node].neighbors.append(clones[n])
+
+        dfs(node)
+        return clones[node]
